@@ -1,6 +1,6 @@
-# ISQA8086-Team-Project - Team 6
+# ISQA8086-Team-Project
 
-Team Combat 
+### Team Combat 
 
   1. Holly
   2. Sravani
