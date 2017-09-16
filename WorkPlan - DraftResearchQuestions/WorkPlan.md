@@ -12,7 +12,7 @@ _This markdown document explains the dataset analysis - **500 Cities: Local Data
 
 
 ## Projected Timeline of Project
-* The projected timeline for the completion of the above mentioned data analysis project can be available [here].(https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/WorkPlan%20-%20DraftResearchQuestions/ProjectWorkPlan_DTD.pod)
+* The projected timeline for the completion of the above mentioned data analysis project can be available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/WorkPlan%20-%20DraftResearchQuestions/ProjectWorkPlan_DTD.pod).
 * This includes the tasks identification, the respective time for completion and the duration of the entire project made through Projectlibre software.
 
 ## Projected effort allocation
