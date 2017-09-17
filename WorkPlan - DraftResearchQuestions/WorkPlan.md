@@ -14,7 +14,7 @@ _This markdown document explains the dataset analysis - **500 Cities: Local Data
 ## Projected Timeline of Project
 * The projected timeline for the completion of the above mentioned data analysis project can be available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/WorkPlan%20-%20DraftResearchQuestions/ProjectWorkPlan_DTDFinal.pdf).
 
-* This includes the tasks identification, the respective time for completion and the duration of the entire project made through Projectlibre software.The above mentioned file is available in the pdf as well as pod format available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/WorkPlan%20-)%20DraftResearchQuestions/ProjectWorkPlan_DTDFinal.pod).
+* This includes the tasks identification, the respective time for completion and the duration of the entire project made through Projectlibre software.The above mentioned file is available in the pdf as well as pod format available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-TeamProject/blob/master/WorkPlan%20-%20DraftResearchQuestions/ProjectWorkPlan_DTDFinal.pod).
 
 * The planned timeline of the project duration includes *09/18/2017 - 12/6/2017* which is **71.75 days ~ 72 days**.
 
