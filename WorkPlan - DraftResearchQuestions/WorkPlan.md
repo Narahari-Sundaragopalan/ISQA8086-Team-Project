@@ -1,4 +1,4 @@
-_This markdown document explains the dataset analysis - **500 Cities: Local Data for Better Health** with rescpet to reserach questions, planned timeline of project,projected effort allocation and target audience._
+_This markdown document explains the dataset analysis - **500 Cities: Local Data for Better Health** with respect to research questions, planned timeline of project,projected effort allocation and target audience._
 
 ## Research Questions
 
@@ -20,7 +20,7 @@ _This markdown document explains the dataset analysis - **500 Cities: Local Data
 
 * The project plan and the duration includes the tasks that are required in the project workdown procedure and the corresponding tasks which are dependent on each one. 
 
-    Note: I have considered 5-day work week with each task allocated for 7 hours a day.
+>Note: I have considered 5-day work week with each task allocated for 7 hours a day.
 
 ## Projected effort allocation
 
