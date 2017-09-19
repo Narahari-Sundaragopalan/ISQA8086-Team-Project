@@ -18,7 +18,7 @@ _This markdown document explains the dataset analysis - **500 Cities: Local Data
 
 ## Projected Timeline of Project
 
-* The projected timeline of the project is the Estimated period or duration for the above mentioned project to be completed delivering the respective deliverables in the planned duration meeting the project guidelines and requirements. [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/WorkPlan%20-%20DraftResearchQuestions/ProjectWorkPlan_DTDFinal.pdf).
+* The projected timeline of the project is the Estimated period or duration for the above mentioned project to be completed delivering the respective deliverables in the planned duration meeting the project guidelines and requirements. [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/WorkPlan%20-%20DraftResearchQuestions/ProjectWorkPlan.pdf).
 
 * This includes the tasks identification, the respective time for completion and the duration of the entire project made through Projectlibre software.The above mentioned file is available in the pdf as well as pod format available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-TeamProject/blob/master/WorkPlan%20-%20DraftResearchQuestions/ProjectWorkPlan_DTDFinal.pod).
 
