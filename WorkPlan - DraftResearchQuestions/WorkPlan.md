@@ -32,7 +32,20 @@ _This markdown document explains the dataset analysis - **500 Cities: Local Data
 
 ## Projected effort allocation
 
+The below table displays the tasks that are involved in the project and the allocated team person against the task. This is a tentative allocation and may change in future.
 
+| Task                      | Description                                                                                                                                                                           | Venkata Sravani | Sri ram  | Holly  | Nara Hari | Task Week |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|----------|--------|-----------|-----------|
+| Work plan                 | Planning  the way we need to start the project work , allocating the tasks among team, conducting team meetings .                                                                     | Yes             | Yes      | Yes    | Yes       | 6         |
+| Data Cleaning             | Cleaning the picked up dataset and choosing the relevant  data for the team analysis and project work.                                                                                | Yes             |          | Yes    |           | 9         |
+| Draft Research Questions  | To choose the most potential and possible research questions that can be analyzed  and answered from the datsets                                                                      |                 |          | Yes    |           | 6         |
+| Documenting the drafts    | Documenting all the draft research and analysis.                                                                                                                                      |                 | Yes      |        |           | 9         |
+| Team Progress meeting     | Meeting the Professor and get the advice for furthering the project work.Discussing  the concerns and finding the alternatives.                                                       |                 |          |        | Yes       | 9         |
+| R script Draft            | Analyzing the data using R, can also perform regression analysis ans ANOVA. And also identify the each part of the scripts funtionality.                                              | Yes             | Yes      | Yes    | Yes       | 11        |
+| R Plot Draft              | Generating the appropriate plot for the analysis  using R.                                                                                                                            | Yes             | Yes      | Yes    | Yes       | 12        |
+| Audience Persona          | A template will be developed based on the details for a persona representing  the target audience for your analysis                                                                   | Yes             | Yes      | Yes    | Yes       | 14        |
+| Presentation              | Presentation of the project                                                                                                                                                           | Yes             | Yes      | Yes    | Yes       | 15        |
+| Git Package               | All the details about the team project work performed should be available here.Like, data cleaning documents, target audience of the analysis.The reserach documents, references etc. | Yes             | Yes      | Yes    | Yes       | 15        |
 
 
 
