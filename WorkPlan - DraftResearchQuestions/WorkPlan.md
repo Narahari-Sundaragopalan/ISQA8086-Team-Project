@@ -44,10 +44,10 @@ _This markdown document explains the dataset analysis - **500 Cities: Local Data
 
 
 ## Target audience
-* Researcher: The result report gives researchers an research direction, so they know which disease is common and should have more researches on.
-* Government Agents: The result report will help government agents target their job on public health prevention activities.
-* Hospital/Physician: From the result report, hospital or doctor could have early preparation for the current and potential patients.
-* Health Analysis organization: Give organization a reference on data analysis skills.
+* Researcher: Identify the health issues facing a state, give researchers a research direction, so they know which disease is common and should have more detail researches on.
+* Government Agents: Identify key health objectives, help government agents target their job on public health prevention activities.
+* Hospital/Physician: Identify emerging health problems, hospital or doctor could have early preparation for the current and potential patients.
+* Health Analysis organization: Give organization a reference on data analysis skills and idea for next analysis project.
 
 
 
