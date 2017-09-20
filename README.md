@@ -7,11 +7,11 @@
   3. Venkata Naga Sai Sriram Akella
   4. Narahari Sundaragopalan
 
- ### Data Set Description and details
+ ### **500 Cities: Local Data for Better Health - Data Set Description and details**
 
     About:
     1.  Chronic diseases generally cannot be prevented by vaccines or cured by vaccines or cured by medication, nor do they just disappear.
-    2.  It’s interesting because this dataset includes small area estimates for 27 measures of chronic disease related to unhealth behaviors(5), health outcomes(13), and use of preventive services(9) in the year 2014.
+    2.  It’s interesting because this dataset includes small area estimates for 27 measures of chronic disease related to unhealthy behaviors(5), health outcomes(13), and use of preventive services(9) in the year 2014.
     3.  This dataset is significant to identify emerging health problems and provide information for disease prevention activities.
 
 #### Description
