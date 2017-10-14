@@ -65,7 +65,7 @@ https://opendatacommons.org/licenses/odbl/1.0/
 
 These high-quality, small-area epidemiologic data can be used both by individual cities and groups of cities as well as other stakeholders to help develop and implement effective and targeted prevention activities; identify emerging health problems; and establish and monitor key health objectives. For example, city planners and elected officials may want to use this data to target neighborhoods with high rates of smoking or other health risk behaviors for effective interventions."
 
-500 Cities Map is available here: !(https://www.cdc.gov/500cities/images/Top500Cities.png)
+500 Cities Map is available ![here](https://www.cdc.gov/500cities/images/Top500Cities.png)
 
 
 Reference: 
