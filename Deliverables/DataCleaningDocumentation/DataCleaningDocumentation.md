@@ -3,20 +3,22 @@
 It’s the complete dataset for the 500 Cities project,available from data.gov.It includes 2013, 2014 model-based small area estimates 
 for 27 measures of chronic disease related to unhealthy behaviors (5), health outcomes (13), and use of
 preventive services (9). It also includes estimates for approximately 28,000 census tracts within 
-500 largest US cities. It includes 10 variables and 810103 observations that included:
+500 largest US cities. It includes 21 variables and 810103 observations that included:
 * Year
-* State
+* StateDesc
+* CityName
 * Category
 * Measure
 * Data value Type
-* Data Value,
+* Data Value
 * Low Confidence Limit
 * High Confidence Limit
 * Population Count
-* Short Question Text.
+* Short Question Text, etc.
     
     This dataset is significant to identity emerging health problems and provide information for disease
 prevention activities.
+    Note: We tend to chose the datset corresponding to the year 2013 and then try to document the cleaning of data.
 
 **Reference and Citation for Data Source**
 
@@ -71,4 +73,25 @@ These high-quality, small-area epidemiologic data can be used both by individual
 Reference: 
 
     500 Cities: Local Data for Better Health. (2016, December 07). Retrieved October 14, 2017, from https://www.cdc.gov/500cities/about.htm
+    
+## Issues encountered with data
+
+1.**Data validity and relativeness** - The data being collected for understanding the health of 500 cities in Unites States is limited to entire United States, respective city and census tract levels to undersatnd the Health Outcomes and Prevention categories. 
+Assuming the data with respect to 2013, the parameters are hence analyzed.
+
+2.**Missing Values** - In the column CityName , DataValue , Data_Value_Footnote , PopulationCount has data range values having 'Blanks' that need to be filled with meaningful and reasonable datavalues that add meaning and value to the dataset and helps in efficient understanding of data.
+
+3.**Unstandardized data** - The column UniqueID has data values '59', '107000' , '0107000-01073000100' etc. which doesn't follow a specified pattern or a clarity in naming the ID or providing definition for the ID. Moreover the value or ID details is not necessary. These need to be fized or deleted based on the mode of data cleaning and the goal of cleansing the data.
+
+4.**Irrelevant data with respect to Data cleaning and Visualization Goals** - The column UniqueID is not necessary with respect to evaluation of data or the pre-determined research goals. So we chosse to delete the column. Also, the Data_Value_Unit which is in '%' can be deleted .The CityFIPS, TractFIPS, ShortQuestionText can be deleted
+
+## Description of Rationale for Data Remediation
+
+1.We have made our data reearch questions and goals clear and do not tend to chose the Census Data for tracting the Census values, instead we have limited data with respect to year 2013 and also eleiminated the FIPS value.
+
+2.Additionally, we have filled the missing data values for CityName , DataValue , Data_Value_Footnote each with 'NA' - _Not Applicable_ value and PopulationCount with _Unknown_ as those columns with the blank or unknown datavalue are not considered for ay sort of data analysis and doesn't provide much detail or clarity on visualization. Instead, naming them appropriately as NA or Unknown helps in rethinking in data collection ar analysis steps.
+
+3.Also we have deleted the irrevelant or unnecessary column and double-checked for data duplicacies and their existence and ensure their validaity with respect to the data evaluation. This also involved redefining and understanding the end-goals in the data cleaning thereby we have deleted the unstandardized data.
+
+## Step-by-step Description of Data Cleaning Process for Replication
 
