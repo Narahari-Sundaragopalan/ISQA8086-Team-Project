@@ -89,7 +89,7 @@ Assuming the data with respect to 2013, the parameters are hence analyzed.
 
 1.We have made our data reearch questions and goals clear and do not tend to chose the Census Data for tracting the Census values, instead we have limited data with respect to year 2013 and also eleiminated the FIPS value.
 
-2.Additionally, we have filled the missing data values for CityName , DataValue , Data_Value_Footnote each with 'NA' - _Not Applicable_ value and PopulationCount with _Unknown_ as those columns with the blank or unknown datavalue are not considered for ay sort of data analysis and doesn't provide much detail or clarity on visualization. Instead, naming them appropriately as NA or Unknown helps in rethinking in data collection ar analysis steps.
+2.Additionally, we have filled the missing data values for CityName , DataValue , Data_Value_Footnote each with 'NA' - _Not Applicable_ value and PopulationCount with 'Unknown' as those columns with the blank or unknown datavalue are not considered for ay sort of data analysis and doesn't provide much detail or clarity on visualization. Instead, naming them appropriately as NA or Unknown helps in rethinking in data collection ar analysis steps.
 
 3.Also we have deleted the irrevelant or unnecessary column and double-checked for data duplicacies and their existence and ensure their validaity with respect to the data evaluation. This also involved redefining and understanding the end-goals in the data cleaning thereby we have deleted the unstandardized data.
 
