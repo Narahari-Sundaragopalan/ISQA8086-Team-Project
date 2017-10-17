@@ -20,6 +20,8 @@ preventive services (9). It also includes estimates for approximately 28,000 cen
 prevention activities.
     Note: We tend to chose the datset corresponding to the year 2013 and then try to document the cleaning of data.
 
+Currently, we are using the dataset with respect to the year 2013 and have seperated the original dataset containing years 2013 and 2014 into the 2013 and has 116025 observations and 21 variables that need to be cleaned for better data evaluation and analysis.
+
 **Reference and Citation for Data Source**
 
     500 Cities: Local Data for Better Health. (2016, December 07). Retrieved October 14, 2017, from https://catalog.data.gov/dataset/500-cities-local-data-for-better-health-b32fd
@@ -87,7 +89,7 @@ Assuming the data with respect to 2013, the parameters are hence analyzed.
 
 ## Description of Rationale for Data Remediation
 
-1.We have made our data reearch questions and goals clear and do not tend to chose the Census Data for tracting the Census values, instead we have limited data with respect to year 2013 and also eleiminated the FIPS value.
+1.We have made our data research questions and goals clear and do not tend to chose the Census Data for tracting the Census values, instead we have limited data with respect to year 2013 and also eliminated the FIPS value.
 
 2.Additionally, we have filled the missing data values for CityName , DataValue , Data_Value_Footnote each with 'NA' - _Not Applicable_ value and PopulationCount with 'Unknown' as those columns with the blank or unknown datavalue are not considered for ay sort of data analysis and doesn't provide much detail or clarity on visualization. Instead, naming them appropriately as NA or Unknown helps in rethinking in data collection ar analysis steps.
 
@@ -95,3 +97,32 @@ Assuming the data with respect to 2013, the parameters are hence analyzed.
 
 ## Step-by-step Description of Data Cleaning Process for Replication
 
+Below are the sequence of steps followed in cleaning the data:
+
+As part of cleaning, we used R script and that helped in cleaning the data with respect to missing values, data anomalies, unstandardized values and entiry relations etc.
+1.To get the current working directory:
+**getwd()**
+
+2.To set the working directory to the desired location:
+**setwd("C:/Users/user/Desktop/ISQA8086-2 Adrea Wigins/")**
+
+3.Loading the desired files to the data frame "data":
+**data<-read.csv("500_Cities__Local_Data_for_Better_Health2013_Clean.csv", header = T , na.strings = c("", "NA"))**
+
+4.To view the loaded data drame:
+**view(data)**
+
+5.To removed the unwanted columns from the loaded data frame and making a new data frame:
+**clean_data<-subset(data, select = -c(6,8,11,12,13,18,19,20))**
+
+6.Renaming the column "Data_Value" to Data_Value in %, as the entire column values reflect percentages:
+**colnames(clean_data)[colnames(clean_data)=="Data_Value"]<-"Data_Value(in%)"**
+
+7.Changing the "NA" values in "PopulationCount" Column to "Unknown" :
+**clean_data[["PopulationCount"]][is.na(clean_data[["PopulationCount"]])] <- "Unknown"**
+
+8.To view the top 6 rows of our working dataframe:
+**head(clean_data)**
+
+9.To view the entire dataframe:
+**View(clean_data)**
