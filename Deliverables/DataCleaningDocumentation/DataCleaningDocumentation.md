@@ -133,8 +133,8 @@ As part of cleaning, we used R script and that helped in cleaning the data with 
 10. To print the required table with set of arguments listed aboove for clean data:
 **write.csv(clean_data, "500_Cities__Local_Data_for_Better_Health2013_Clean.csv")**
 
-    Note: The initial dataset correpsonding to the year 2013 with uncleaned data is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/500CitiesLocalDataSetForBetterHealth2013.csv)
-    and the Cleaned dataset for tyhe 500 Cities dataset is also available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/CleanedDataSet500CitiesForBetterHealth2013.csv) for reference.
+    Note: The initial dataset corresponding to the year 2013 with uncleaned data is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/500CitiesLocalDataSetForBetterHealth2013.csv)
+    and the Cleaned dataset for the 500 Cities dataset is also available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/CleanedDataSet500CitiesForBetterHealth2013.csv) for reference.
     
 ## Contributors
 1. Venkata Sravani Kakaraparthi
