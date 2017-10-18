@@ -3,7 +3,7 @@
 It’s the complete dataset for the 500 Cities project,available from data.gov.It includes 2013, 2014 model-based small area estimates 
 for 27 measures of chronic disease related to unhealthy behaviors (5), health outcomes (13), and use of
 preventive services (9). It also includes estimates for approximately 28,000 census tracts within 
-500 largest US cities. It includes 21 variables and 810103 observations that included:
+500 largest US cities. It includes 11 variables and 810103 observations that included:
 * Year
 * StateDesc
 * CityName
@@ -21,7 +21,7 @@ prevention activities.
     
     Note: We tend to chose the dataset corresponding to the year 2013 and then try to document the cleaning of data.
 
-Currently, we are using the dataset with respect to the year 2013 and have seperated the original dataset containing years 2013 and 2014 into the 2013 and has 116025 observations and 21 variables that need to be cleaned for better data evaluation and analysis.
+Currently, we are using the dataset with respect to the year 2013 and have seperated the original dataset containing years 2013 and 2014 into the 2013 and has 116025 observations and 11 variables that need to be cleaned for better data evaluation and analysis.
 
 **Reference and Citation for Data Source**
 
