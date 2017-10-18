@@ -69,7 +69,7 @@ https://opendatacommons.org/licenses/odbl/1.0/
 2. The data are published through a public, interactive “500 Cities” website that allows users to view, explore, and download city- and tract-level data.
 3. Although limited data are available at the county and metropolitan levels, this project represents a first-of-its kind data analysis to release information on a large scale for cities and for small areas within cities. This system complements existing surveillance data necessary to more fully understand the health issues affecting the residents of that city or census tract.
 
-These high-quality, small-area epidemiologic data can be used both by individual cities and groups of cities as well as other stakeholders to help develop and implement effective and targeted prevention activities; identify emerging health problems; and establish and monitor key health objectives. For example, city planners and elected officials may want to use this data to target neighborhoods with high rates of smoking or other health risk behaviors for effective interventions."
+These high-quality, small-area epidemiologic data can be used both by individual cities and groups of cities as well as other stakeholders to help develop and implement effective and targeted prevention activities; identify emerging health problems; and establish and monitor key health objectives. For example, city planners and elected officials may want to use this data to target neighborhoods with high rates of smoking or other health risk behaviors for effective interventions."(n.d.500 Cities: Local Data for Better Health.)
 
 500 Cities Map is available ![here](https://www.cdc.gov/500cities/images/Top500Cities.png)
 
