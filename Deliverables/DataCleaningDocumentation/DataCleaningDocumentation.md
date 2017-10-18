@@ -18,6 +18,7 @@ preventive services (9). It also includes estimates for approximately 28,000 cen
     
     This dataset is significant to identity emerging health problems and provide information for disease
 prevention activities.
+    
     Note: We tend to chose the dataset corresponding to the year 2013 and then try to document the cleaning of data.
 
 Currently, we are using the dataset with respect to the year 2013 and have seperated the original dataset containing years 2013 and 2014 into the 2013 and has 116025 observations and 21 variables that need to be cleaned for better data evaluation and analysis.
@@ -133,11 +134,11 @@ As part of cleaning, we used R script and that helped in cleaning the data with 
 **write.csv(clean_data, "500_Cities__Local_Data_for_Better_Health2013_Clean.csv")**
 
     Note: The initial dataset correpsonding to the year 2013 with uncleaned data is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/500CitiesLocalDataSetForBetterHealth2013.csv)
-    and the Cleaned dataset for tyhe 500 Cities dataset is also available [here] (https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/CleanedDataSet500CitiesForBetterHealth2013.csv) for reference.
+    and the Cleaned dataset for tyhe 500 Cities dataset is also available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/CleanedDataSet500CitiesForBetterHealth2013.csv) for reference.
     
 ## Contributors
-1.Venkata Sravani Kakaraparthi
-2.Venkata Naga Sai Sriram Akella
-3.Yanhe Wu
-4.Narahari Sundaragopalan
+1. Venkata Sravani Kakaraparthi
+2. Venkata Naga Sai Sriram Akella
+3. Yanhe Wu
+4. Narahari Sundaragopalan
 
