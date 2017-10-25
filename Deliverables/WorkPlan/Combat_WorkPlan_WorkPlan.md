@@ -5,13 +5,23 @@ _This markdown document explains the dataset analysis - **500 Cities: Local Data
 >Mentioned below are the draft research questions we plan to answer based on our data cleaning and analysis over the course of this project.
 
   1. What is the estimate of existence of _Unhealthy behavior, Health outcomes and Preventive services_, based on different measures in each of the states in the US ?
+    
+  Based on Suggestion:  1. What is the estimate of existence of _Unhealthy behavior, Health outcomes and Preventive services_, based on different measures in each of the regions in the US ?
 
   2. What is the health level or health risk factor of one state compared to another ? Which states have a higher health risk level and which states are at a lower health risk level ?
+  
+  Based on Suggestion:  2. What is the health level or health risk factor of one region compared to another ? Which regions have a higher health risk level and which regions are at a lower health risk level ?
+  
 
   3. Which health problem is most prominent and prevailing for each state in each category (_Unhealthy behavior, Health outcomes and Preventive services_) ?
+  
+  Based on Suggestion: 3. Which health problem is most prominent and prevailing for each region in each category (_Unhealthy behavior, Health outcomes and Preventive services_) ?
 
   4. What could be the key health objectives and preventive measures required for each state based on the health problems ?
-
+  
+  Based on Suggestion: 4. What could be the key health objectives and preventive measures required for each region based on the health problems ?
+  
+  
 >Our team plans to start off by trying to answer the four questions specified above. If there are further questions which could be extended from our analysis and answered, those will be updated accordingly. So the number of questions are subject to change.
 
 
