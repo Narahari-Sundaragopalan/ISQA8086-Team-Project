@@ -180,32 +180,3 @@ ggscatter(mergedHealthOutcome_Prevention, x = "Population_Health_Outcomes",
           y = "Population_Prevention_Category", add = "reg.line", 
           conf.int = TRUE, cor.coef = TRUE, cor.method = "pearson", 
           xlab = "Regional Health Outcome", ylab = "Regional Prevention")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
