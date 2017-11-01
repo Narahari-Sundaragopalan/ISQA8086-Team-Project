@@ -1,3 +1,16 @@
+
+### Team Combat R Script ###
+
+### =============================================================================
+### This R Script divides the States' Health Data into 5 specific Regions &
+### creates a corelation between Health Outcomes and the corresponding 
+### Prevention Measures taken for each Region
+### Using the correlation it plots a linear regression plot between
+### Health Outcomes and Prevention Measures for each Region
+### This script is the first step towards exploratory analysis and
+### attempts to answer the Research Questions raised in previous Assignments
+### =============================================================================
+
 # Loading the Library
 library(readr)
 
