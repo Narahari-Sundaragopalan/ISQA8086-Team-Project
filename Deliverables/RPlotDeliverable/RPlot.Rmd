@@ -3,8 +3,8 @@ title: "R Plot"
 author: "Team Combat"
 date: "11/8/2017"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ### R Plot - Documentation 
@@ -20,6 +20,7 @@ output:
 library(readr)
 library(ggplot2)
 library(reshape2)
+library(stringr)
 
 # Setting the Working Directory for the R Script
 setwd('/Users/naru/ISQA8086/Team_Project/ISQA8086-Team-Project/Deliverables/RScriptDeliverable')
@@ -37,32 +38,59 @@ categoryDistribution$PopulationCount <- as.numeric(categoryDistribution$Populati
 # Calculate the Actual Population Count Value from the Data Value Column and Population Column
 categoryDistribution$ActualPopulation <- (categoryDistribution$Data_Value_in_percentage*categoryDistribution$PopulationCount*0.01)
 
-# Insert a new Column named Region and categorize states into different Regions ("South", "West", "Midwest", "Northeast", "USA")
+# Insert a new Column named Region and categorize states into different Regions ("New England", "Middle Atlantic", "East North Central", "West North Central", "South Atlantic" "East South Central", "West South Central", "Mountain", "Pacific", "USA")
 categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Connecticut","Maine",
-                                                                  "Massachusetts", "New Hampshire", 
-                                                                  "Rhode Island", "Vermont", "New Jersey", "
-                                                                  New York", "Pennsylvania")] <- "Northeast"
+                                                                  "Massachusetts", "New
+                                                                  Hampshire", "Rhode
+                                                                  Island", "Vermont")] <-
+  "New England"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("New Jersey", "New York",
+                                                                  "Pennsylvania")] <- "Middle Atlantic"
 
 categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Illinois", "Indiana", 
                                                                   "Michigan", "Ohio", 
-                                                                  "Wisconsin", "Iowa", 
+                                                                  "Wisconsin")] <- "East North Central"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Iowa", 
                                                                   "Kansas", "Minnesota", 
                                                                   "Missouri", "Nebraska", 
-                                                                  "North Dakota", "South Dakota")] <- "Midwest"
+                                                                  "North Dakota", "South
+                                                                  Dakota")] <- "West North Central"
 
 categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Delaware", "Florida", 
                                                                   "Georgia", "Maryland", 
-                                                                  "North Carolina", "South Carolina", 
-                                                                  "Virginia", "District of Columbia", 
-                                                                  "West Virginia", "Alabama", "Kentucky",
-                                                                  "Mississippi", "Tennessee", "Arkansas", 
-                                                                  "Louisiana", "Oklahoma", "Texas")] <- "South"
+                                                                  "North Carolina", "South
+                                                                  Carolina", "Virginia",
+                                                                  "District of Columbia", 
+                                                                  "West Virginia")] <-
+  "South Atlantic"
 
-categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Arizona", "Colorado", "Idaho", 
-                                                                  "Montana", "Nevada", "New Mexico", 
-                                                                  "Utah", "Wyoming", "Alaska", 
-                                                                  "California", "Hawaii", "Oregon", 
-                                                                  "Washington")] <- "West"
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Alabama", "Kentucky",
+                                                                  "Mississippi",
+                                                                  "Tennessee")] <- "East South Central"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Arkansas", 
+                                                                  "Louisiana", "Oklahoma",
+                                                                  "Texas")] <- "West South Central"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Arizona", "Colorado",
+                                                                  "Idaho", 
+                                                                  "Montana", "Nevada", "New
+                                                                  Mexico", 
+                                                                  "Utah", "Wyoming")] <- "Mountain"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Alaska", 
+                                                                  "California", "Hawaii",
+                                                                  "Oregon", 
+                                                                  "Washington")] <- "Pacific"
+
 
 categoryDistribution$Region[categoryDistribution$StateDesc %in% c("United States")] <- "USA"
 
@@ -77,7 +105,7 @@ healthOutcomesCategory <- subset (categoryDistribution, Category == 'Health Outc
 
 # Perform a Sum of Health Outcomes for each Region 
 sumofHealthOutcomesCategory <- aggregate(healthOutcomesCategory$ActualPopulation, 
-                                         by = list(Region = healthOutcomesCategory$Region), 
+                                         by = list(Region = healthOutcomesCategory$Region),
                                          FUN=sum)
 
 # Create a subset of the original data frame for Prevention category
@@ -132,7 +160,7 @@ mergedHealthOutcome_Prevention <- merge(sumOfHealthOutcomesByRegion, sumOfPreven
 
 ```{r}
 #Removed unwanted state rowname with the value "USA"
-mergedHealthOutcome_Prevention <- mergedHealthOutcome_Prevention[-4,]
+mergedHealthOutcome_Prevention <- mergedHealthOutcome_Prevention[-8,]
 
 #Create 3 temporary data frames for creating an R Plot
 a <- data.frame(mergedHealthOutcome_Prevention$Region)
@@ -146,7 +174,17 @@ df <- data.frame(a,b,c)
 df <- melt(df, id.vars = "mergedHealthOutcome_Prevention.Region")
 
 #Create an R plot using ggplot library
-ggplot(df, aes(x=mergedHealthOutcome_Prevention.Region, y=value, fill=variable)) + geom_bar(stat = "identity") + scale_fill_manual(values = c("#303B41", "#00B2B9"), labels= c("Health Outcome", "Prevention Category")) + xlab("Regions") + ylab("Population Affected") + ggtitle("Box Plot of Population Affected and Regions in the USA") + theme(plot.title = element_text(hjust = 0.5))
+ggplot(df, aes(x=reorder(mergedHealthOutcome_Prevention.Region, value), 
+               y=value/1000000, fill=variable)) + 
+  geom_bar(stat = "identity") + 
+  scale_fill_manual(values = c("#303B41", "#00B2B9"), 
+                    labels= c("Health Outcome", "Prevention Category")) +
+  xlab("Regions") + 
+  ylab("Population Affected (in Millions)") + 
+  ggtitle("Box Plot of Population Affected and Regions in the USA") +
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  scale_x_discrete(labels = function(x) str_wrap(x, width=5))
+
 ```
 
 
@@ -159,13 +197,21 @@ ggplot(df, aes(x=mergedHealthOutcome_Prevention.Region, y=value, fill=variable))
 
 ```{r}
 #Create a CSV of the cleaned data and R Script created in the previous assignment
-state_and_region <- read.csv("US_States_Regions_Health.csv")
+state_and_region <- read.csv("Updated_US_States_Regions_Health.csv")
 
 #Create a new data frame creating a relation between Measures and States
-measureStateRelation <- aggregate(state_and_region$ActualPopulation, by=list(Measures = state_and_region$MeasureId, State = state_and_region$StateDesc), FUN=sum)
+measureStateRelation <- aggregate(list(state_and_region$ActualPopulation,
+                                       state_and_region$PopulationCount), 
+                                  by=list(Measures = state_and_region$MeasureId, State =
+                                            state_and_region$StateDesc), FUN=sum)
 
 #Rename column name to a meaningful name
 colnames(measureStateRelation)[3] <- "Affected_Population"
+colnames(measureStateRelation)[4] <- "Total_Population"
+
+measureStateRelation$Percent_Affected_Population <-
+  (measureStateRelation$Affected_Population / 
+     measureStateRelation$Total_Population * 100)
 
 #Create a data frame for High BP Health Outcome
 measureBPHigh <- subset(measureStateRelation, Measures == 'BPHIGH')
@@ -184,10 +230,22 @@ library(mapproj)
 data("fifty_states")
 
 #Create a plot to show State wise Distribution of High BP in the USA
-p <- ggplot(measureBPHigh, aes(map_id = state)) + geom_map(aes(fill=Affected_Population), map = fifty_states) + expand_limits(x = fifty_states$long, y = fifty_states$lat) + coord_map() + scale_x_continuous(breaks=NULL) + scale_y_continuous(breaks=NULL) + labs(x="", y="") + theme(panel.background = element_blank()) 
+p <- ggplot(measureBPHigh, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + 
+  labs(x="", y="") + 
+  theme(panel.background = element_blank()) 
 
 #Provide a title to the R Plot
-p + ggtitle("State wise Distribution - Affected Population by High BP") + theme(plot.title = element_text(hjust = 0.5))
+p + scale_fill_gradient(low="#3f84f5", high = "#102e60", 
+                        space = "Lab",  
+                        guide = "colourbar") + 
+  ggtitle("State wise Distribution - Affected Population by High BP (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1))
+
 ```
 
 
@@ -210,10 +268,21 @@ measureBPMed <- measureBPMed[-45,]
 levels(measureBPMed$state) <- tolower(levels(measureBPMed$state))
 
 #Create a R Plot for State Wise Distribution for BP Prevention
-vizMeasureBPMed <- ggplot(measureBPMed, aes(map_id = state)) + geom_map(aes(fill=Affected_Population), map = fifty_states) + expand_limits(x = fifty_states$long, y = fifty_states$lat) + coord_map() + scale_x_continuous(breaks=NULL) + scale_y_continuous(breaks=NULL) + labs(x="", y="") + theme(panel.background = element_blank())
+vizMeasureBPMed <- ggplot(measureBPMed, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x="", y="") + 
+  theme(panel.background = element_blank())
 
 #Provide a Title and colour to the R Plot
-vizMeasureBPMed + scale_fill_gradient(low="#3d9556", high = "#25de58", space = "Lab",  guide = "colourbar") + ggtitle("State wise Distribution - Prevention for High BP") + theme(plot.title = element_text(hjust = 0.5))
+vizMeasureBPMed + scale_fill_gradient(low="#3ff863", high = "#106921", 
+                                      space = "Lab", 
+                                      guide = "colourbar") + 
+  ggtitle("State wise Distribution - Prevention for High BP (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1))
+
 ```
 
 
@@ -233,10 +302,21 @@ measureHighCholesterol <- measureHighCholesterol[-45,]
 levels(measureHighCholesterol$state) <- tolower(levels(measureHighCholesterol$state))
 
 #Create a R Plot for State wise distribution of High Cholesterol Health Outcome in the USA
-vizMeasureHighCholesterol <- ggplot(measureHighCholesterol, aes(map_id = state)) + geom_map(aes(fill=Affected_Population), map = fifty_states) + expand_limits(x = fifty_states$long, y = fifty_states$lat) + coord_map() + scale_x_continuous(breaks=NULL) + scale_y_continuous(breaks=NULL) + labs(x="", y="") + theme(panel.background = element_blank())
+vizMeasureHighCholesterol <- ggplot(measureHighCholesterol, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x="", y="") + 
+  theme(panel.background = element_blank())
 
 #Provide a title and colour to the R Plot
-vizMeasureHighCholesterol +  scale_fill_gradient(low="#c31e25", high = "#ee7e83", space = "Lab",  guide = "colourbar") + ggtitle("State wise Distribution - High Cholesterol") + theme(plot.title = element_text(hjust = 0.5))
+vizMeasureHighCholesterol +  scale_fill_gradient(low="#e86f7e", high = "#b9041a", 
+                                                 space = "Lab",  
+                                                 guide = "colourbar") + 
+  ggtitle("State wise Distribution - High Cholesterol (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1))
+
 ```
 
 
@@ -255,10 +335,20 @@ measureCholesterolScreen <- measureCholesterolScreen[-45,]
 levels(measureCholesterolScreen$state) <- tolower(levels(measureCholesterolScreen$state))
 
 #Create R Plot for State wise distribution of Cholesterol Prevention measure
-vizHighCholesterolPrevention <- ggplot(measureCholesterolScreen, aes(map_id = state)) + geom_map(aes(fill=Affected_Population), map = fifty_states) + expand_limits(x = fifty_states$long, y = fifty_states$lat) + coord_map() + scale_x_continuous(breaks=NULL) + scale_y_continuous(breaks=NULL) + labs(x="", y="") + theme(panel.background = element_blank())
+vizHighCholesterolPrevention <- ggplot(measureCholesterolScreen, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x="", y="") + 
+  theme(panel.background = element_blank())
 
 #Provide a title and colour to the R Plot
-vizHighCholesterolPrevention + scale_fill_gradient(low="#af7ac5", high = "#ebdef0", space = "Lab",  guide = "colourbar") + ggtitle("State wise Distribution - Prevention for Cholesterol") + theme(plot.title = element_text(hjust = 0.5))
+vizHighCholesterolPrevention + scale_fill_gradient(low="#e6bcf0", high = "#990bbb", 
+                                                   space = "Lab",  
+                                                   guide = "colourbar") + 
+  ggtitle("State wise Distribution - Prevention for Cholesterol (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1))
 ```
 
 
