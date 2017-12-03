@@ -1,12 +1,12 @@
 
-#ISQA8086- Final Project Markdown Document
+# ISQA8086- Final Project Markdown Document
 
-##Team Combat - Project Members
+## Team Combat - Project Members
 
-Yanhe (Holly) Wu
-Venkata Sravani Kakaraparthi
-Venkata Naga Sai Sriram Akella
-Narahari Sundaragopalan
+1. Yanhe (Holly) Wu
+2. Venkata Sravani Kakaraparthi
+3. Venkata Naga Sai Sriram Akella
+4. Narahari Sundaragopalan
 
 ## 500 Cities: Local Data for Better Health - Data Set Description and details
 
