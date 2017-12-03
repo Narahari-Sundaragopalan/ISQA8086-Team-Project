@@ -58,14 +58,14 @@ Variables:
 
 ## Git Repository Package contents
 
-* Readme.md that describes the overview of the contents and the content that reperesents in the presentation of a dataset and explains the contributorship to the necessary deliverables
-* Fully commented knitted HTML document that contains-
+* *Readme.md* that describes the overview of the contents and the content that reperesents in the presentation of a dataset and explains the contributorship to the necessary deliverables
+* *Fully commented knitted HTML* document that contains-
   1. Data cleaning documentation and/or scripts, including data source location,
   2. Fully commented analysis script and any outputs that it generates, including summary,statistics and plots
-* Audience Persona which represents the target audinece who is the end user of the data analysis or the cleaned dataset for better and real-time decision making.
-* Written Summary which is the documentation which includes the Target audience, description of the data source, plots of analysis, interpretation of the dataet and the visualization, with relevant references and source information.
-* Presentation slides which reflect the Pitch of the project and answer the relevance for the target audience in order to best utilize the cleaned data and use for the alleviation of a business purpose of an organization.
-* Contibutorship statement which describes the contribution of each team member to the assignment deliverable.
+* *Audience Persona* which represents the target audinece who is the end user of the data analysis or the cleaned dataset for better and real-time decision making.
+* *Written Summary* which is the documentation which includes the Target audience, description of the data source, plots of analysis, interpretation of the dataet and the visualization, with relevant references and source information.
+* *Presentation slides* which reflect the Pitch of the project and answer the relevance for the target audience in order to best utilize the cleaned data and use for the alleviation of a business purpose of an organization.
+* *Contibutorship statement* which describes the contribution of each team member to the assignment deliverable.
 
 ## License Details
 
@@ -73,4 +73,4 @@ This is an open database intended for public use. Open Database License(ODbL)
 
 ## Reference
 
-500 Cities: Local Data for Better Health. (2016, December 07). Retrieved September 18, 2017, from https://catalog.data.gov/dataset/500-cities-local-data-for-better-health-b32fd
+500 Cities: Local Data for Better Health. (2016, December 07). Retrieved December 03, 2017, from https://catalog.data.gov/dataset/500-cities-local-data-for-better-health-b32fd
