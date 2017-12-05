@@ -3,8 +3,8 @@ title: "R Plot"
 author: "Team Combat"
 date: "11/8/2017"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ### R Plot - Documentation 
@@ -183,7 +183,8 @@ ggplot(df, aes(x=reorder(mergedHealthOutcome_Prevention.Region, value),
   ylab("Population Affected (in Millions)") + 
   ggtitle("Box Plot of Population Affected and Regions in the USA") +
   theme(plot.title = element_text(hjust = 0.5)) + 
-  scale_x_discrete(labels = function(x) str_wrap(x, width=5))
+  scale_x_discrete(labels = function(x) str_wrap(x, width=5)) +
+  labs(fill="Measurement Category")
 
 ```
 
@@ -240,11 +241,12 @@ p <- ggplot(measureBPHigh, aes(map_id = state)) +
   theme(panel.background = element_blank()) 
 
 #Provide a title to the R Plot
-p + scale_fill_gradient(low="#3f84f5", high = "#102e60", 
+p + scale_fill_gradient(low="#86b2f9", high = "#002266", 
                         space = "Lab",  
                         guide = "colourbar") + 
   ggtitle("State wise Distribution - Affected Population by High BP (in Percentage)") + 
-  theme(plot.title = element_text(hjust = 0.1))
+  theme(plot.title = element_text(hjust = 0.1)) + 
+  labs(fill="Population Percentage (%)")
 
 ```
 
@@ -277,11 +279,12 @@ vizMeasureBPMed <- ggplot(measureBPMed, aes(map_id = state)) +
   theme(panel.background = element_blank())
 
 #Provide a Title and colour to the R Plot
-vizMeasureBPMed + scale_fill_gradient(low="#3ff863", high = "#106921", 
+vizMeasureBPMed + scale_fill_gradient(low="#9dfbb0", high = "#006622", 
                                       space = "Lab", 
                                       guide = "colourbar") + 
   ggtitle("State wise Distribution - Prevention for High BP (in Percentage)") + 
-  theme(plot.title = element_text(hjust = 0.1))
+  theme(plot.title = element_text(hjust = 0.1)) + 
+  labs(fill="Population Percentage (%)")
 
 ```
 
@@ -311,11 +314,12 @@ vizMeasureHighCholesterol <- ggplot(measureHighCholesterol, aes(map_id = state))
   theme(panel.background = element_blank())
 
 #Provide a title and colour to the R Plot
-vizMeasureHighCholesterol +  scale_fill_gradient(low="#e86f7e", high = "#b9041a", 
+vizMeasureHighCholesterol +  scale_fill_gradient(low="#f1a7b0", high = "#af0418", 
                                                  space = "Lab",  
                                                  guide = "colourbar") + 
   ggtitle("State wise Distribution - High Cholesterol (in Percentage)") + 
-  theme(plot.title = element_text(hjust = 0.1))
+  theme(plot.title = element_text(hjust = 0.1)) +
+  labs(fill="Population Percentage (%)")
 
 ```
 
@@ -348,7 +352,8 @@ vizHighCholesterolPrevention + scale_fill_gradient(low="#e6bcf0", high = "#990bb
                                                    space = "Lab",  
                                                    guide = "colourbar") + 
   ggtitle("State wise Distribution - Prevention for Cholesterol (in Percentage)") + 
-  theme(plot.title = element_text(hjust = 0.1))
+  theme(plot.title = element_text(hjust = 0.1)) + 
+  labs(fill="Population Percentage (%)")
 ```
 
 
