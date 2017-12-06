@@ -56,6 +56,10 @@ Variables:
 
 *Source : Retrieved from Narahari Sundaragopalan GitHub,.2017,December 03.*
 
+## Data Source Location
+
+The initial data set of the 500 Cities Project is available [here] (https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/500CitiesLocalDataSetForBetterHealth2013.csv). While the cleaned dataset is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/Deliverables/RPlotDeliverable/Updated_US_States_Regions_Health.csv)
+
 ## Git Repository Package contents
 
 * [Readme.md](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/Deliverables/Git%20Repository%20Package/Readme.md) that describes the overview of the contents and the content that represents in the presentation of a dataset and explains the contributorship to the necessary deliverables
