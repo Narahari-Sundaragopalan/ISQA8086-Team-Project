@@ -3,7 +3,7 @@
 
 ## Team Combat - Project Members
 
-1. Yanhe (Holly) Wu
+1. Yanhe Wu
 2. Venkata Sravani Kakaraparthi
 3. Venkata Naga Sai Sriram Akella
 4. Narahari Sundaragopalan
@@ -58,14 +58,14 @@ Variables:
 
 ## Git Repository Package contents
 
-* *Readme.md* that describes the overview of the contents and the content that reperesents in the presentation of a dataset and explains the contributorship to the necessary deliverables
+* *Readme.md* that describes the overview of the contents and the content that represents in the presentation of a dataset and explains the contributorship to the necessary deliverables
 * *Fully commented knitted HTML* document that contains-
   1. Data cleaning documentation and/or scripts, including data source location,
   2. Fully commented analysis script and any outputs that it generates, including summary,statistics and plots
-* *Audience Persona* which represents the target audinece who is the end user of the data analysis or the cleaned dataset for better and real-time decision making.
+* *Audience Persona* which represents the target audience who is the end user of the data analysis or the cleaned dataset for better and real-time decision making.
 * *Written Summary* which is the documentation which includes the Target audience, description of the data source, plots of analysis, interpretation of the dataet and the visualization, with relevant references and source information.
 * *Presentation slides* which reflect the Pitch of the project and answer the relevance for the target audience in order to best utilize the cleaned data and use for the alleviation of a business purpose of an organization.
-* *Contibutorship statement* which describes the contribution of each team member to the assignment deliverable.
+* *Contributorship statement* which describes the contribution of each team member to the assignment deliverable.
 
 ## License Details
 
