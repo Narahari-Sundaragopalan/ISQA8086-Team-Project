@@ -58,7 +58,7 @@ Variables:
 
 ## Data Source Location
 
-The initial data set of the 500 Cities Project is available [here] (https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/500CitiesLocalDataSetForBetterHealth2013.csv). While the cleaned dataset is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/Deliverables/RPlotDeliverable/Updated_US_States_Regions_Health.csv)
+The initial data set of the 500 Cities Project is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/500CitiesLocalDataSetForBetterHealth2013.csv). While the cleaned dataset is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/Deliverables/RPlotDeliverable/Updated_US_States_Regions_Health.csv)
 
 ## Git Repository Package contents
 
