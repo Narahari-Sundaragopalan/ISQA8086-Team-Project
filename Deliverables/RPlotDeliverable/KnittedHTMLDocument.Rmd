@@ -1,0 +1,503 @@
+---
+title: "KnittedHTMLDocument"
+author: "Team Combat"
+date: "12/6/2017"
+output: html_document
+---
+
+> This is a Knitted HTML document, containing data cleaning documentation, steps, scripts and plots used for 500 Cities Health Project
+
+### Task-1 Description of the data source with citation
+
+> This is a complete dataset for the 500 Cities project,available from data.gov.It includes 2013, 2014 model-based small area estimates for 27 measures of chronic disease related to unhealthy behaviors (5), health outcomes (13), and use of preventive services (9). It also includes estimates for approximately 28,000 census tracts within 500 largest US cities. It includes 21 variables and 810103 observations.
+
+> Currently, we are using the dataset with respect to the year 2013 and have seperated the original dataset containing years 2013 and 2014 into the 2013 and has 116025 observations and 13 variables that need to be cleaned for better data evaluation and analysis. Due to the reason that we are not doing census tract analysis based on the population count, the variable Low confidence limit, High confidence limit have been removed .
+
+> Variables include: 
+* Year
+* StateDesc
+* CityName
+* CategoryLevel
+* Measure
+* Data value Type
+* Data Value
+* Data Value Footnote
+* Population Count
+    
+>   This dataset is significant to identity emerging health problems and provide information for disease prevention activities.
+    
+>    Note: We tend to chose the dataset corresponding to the year 2013 and then try to document the cleaning of data.
+
+
+
+**Reference and Citation for Data Source**
+
+    500 Cities: Local Data for Better Health. (2016, December 07). Retrieved October 14, 2017, from https://catalog.data.gov/dataset/500-cities-local-data-for-better-health-b32fd
+
+
+### Task-2 Identifying any intellectual policy constraints (licensing)
+
+> This is an open database intended for public use. Open Database License(ODbL). The details of its usage and availability are as follows:
+
+> The Open Database License (ODbL) is a license agreement intended to allow users to freely
+share, modify, and use this Database while maintaining this same freedom for others.
+The Open Database License (ODbL) is a license agreement intended to allow users to freely
+share, modify, and use this Database while maintaining this same freedom for others. Many
+databases are covered by copyright, and therefore this document licenses these rights. Some
+jurisdictions, mainly in the European Union, have specific rights that cover databases, and so the ODbL addresses these rights, too. Finally, the ODbL is also an agreement in contract for users of this Database to act in certain ways in return for accessing this Database.
+
+> Databases can contain a wide variety of types of content (images, audiovisual material, and sounds all in the same database, for example), and so the ODbL only governs the rights over the database, and not the contents of the Database individually. Licensors should use the ODbL together with another license for the contents, if the contents have a single set of rights that uniformly covers all of the contents. If the contents have multiple sets of different rights, Licensors should describe what rights govern what contents together in the individual record or in some other way that clarifies what rights apply.
+
+> Sometimes the contents of a database, or the database itself, can be covered by other rights not addressed here (such as private contracts, trade mark over the name, or privacy rights / data protection rights over information in the contents), and so you are advised that you may have to
+consult other documents or clear other rights before doing activities not covered by this License.
+https://opendatacommons.org/licenses/odbl/1.0/
+
+### Task-3 Description of Metadata and Purpose of Project
+
+1. This is the complete dataset for the 500 Cities project. This dataset includes 2013, 2014 model-based small area estimates for 27 measures of chronic disease related to unhealthy behaviors (5), health outcomes (13), and use of preventive services (9). Data were provided by the Centers for Disease Control and Prevention (CDC), Division of Population Health, Epidemiology and Surveillance Branch. The project was funded by the Robert Wood Johnson Foundation (RWJF) in conjunction with the CDC Foundation. 
+
+2. It represents a first-of-its kind effort to release information on a large scale for cities and for small areas within those cities. It includes estimates for the 500 largest US cities and approximately 28,000 census tracts within these cities. These estimates can be used to identify emerging health problems and to inform development and implementation of effective, targeted public health prevention activities.
+
+3. Because the small area model cannot detect effects due to local interventions, users are cautioned against using these estimates for program or policy evaluations. Data sources used to generate these measures include Behavioral Risk Factor Surveillance System (BRFSS) data (2013, 2014), Census Bureau 2010 census population data, and American Community Survey (ACS) 2009-2013, 2010-2014 estimates. More information about the methodology can be found at www.cdc.gov/500cities.
+
+**Purpose of the Project**
+
+1. "This project reports city and census tract-level data, obtained using small area estimation methods, for 27 chronic disease measures for the 500 largest American cities.
+
+2. The data are published through a public, interactive “500 Cities” website that allows users to view, explore, and download city- and tract-level data.
+
+3. Although limited data are available at the county and metropolitan levels, this project represents a first-of-its kind data analysis to release information on a large scale for cities and for small areas within cities. This system complements existing surveillance data necessary to more fully understand the health issues affecting the residents of that city or census tract.
+
+> These high-quality, small-area epidemiologic data can be used both by individual cities and groups of cities as well as other stakeholders to help develop and implement effective and targeted prevention activities; identify emerging health problems; and establish and monitor key health objectives. For example, city planners and elected officials may want to use this data to target neighborhoods with high rates of smoking or other health risk behaviors for effective interventions."(n.d.500 Cities: Local Data for Better Health.)
+
+500 Cities Map is available ![here](https://www.cdc.gov/500cities/images/Top500Cities.png)
+
+
+**_Reference_**: 
+
+    500 Cities: Local Data for Better Health. (2016, December 07). Retrieved October 14, 2017, from https://www.cdc.gov/500cities/about.htm
+    
+### Task-4 Issues encountered with data
+
+1. **Data validity and relativeness** - The data being collected for understanding the health of 500 cities in Unites States is limited to entire United States, respective city and census tract levels to undersatnd the Health Outcomes and Prevention categories. 
+Assuming the data with respect to 2013, the parameters are hence analyzed.
+
+2. **Missing Values** - In the column CityName , DataValue , Data_Value_Footnote , PopulationCount has data range values having 'Blanks' that need to be filled with meaningful and reasonable datavalues that add meaning and value to the dataset and helps in efficient understanding of data.
+
+3. **Unstandardized data** - The column UniqueID has data values '59', '107000' , '0107000-01073000100' etc. which doesn't follow a specified pattern or a clarity in naming the ID or providing definition for the ID. Moreover the value or ID details is not necessary. These need to be fized or deleted based on the mode of data cleaning and the goal of cleansing the data.
+
+4. **Irrelevant data with respect to Data cleaning and Visualization Goals** - The column UniqueID is not necessary with respect to evaluation of data or the pre-determined research goals. So we chosse to delete the column. Also, the Data_Value_Unit which is in '%' can be deleted .The CityFIPS, TractFIPS, ShortQuestionText can be deleted
+
+### Task-5 Description of Rationale for Data Remediation
+
+1.We have made our data research questions and goals clear and do not tend to chose the Census Data for tracting the Census values, instead we have limited data with respect to year 2013 and also eliminated the FIPS value.
+
+2.Additionally, we have filled the missing data values for CityName , DataValue , Data_Value_Footnote each with 'NA' - _Not Applicable_ value and PopulationCount with 'Unknown' as those columns with the blank or unknown datavalue are not considered for ay sort of data analysis and doesn't provide much detail or clarity on visualization. Instead, naming them appropriately as NA or Unknown helps in rethinking in data collection ar analysis steps.
+
+3.Also we have deleted the irrevelant or unnecessary column and double-checked for data duplicacies and their existence and ensure their validity with respect to the data evaluation. This also involved redefining and understanding the end-goals in the data cleaning thereby we have deleted the unstandardized data.
+
+### Task-6 Step-by-step Description of Data Cleaning Process for Replication
+
+Below are the sequence of steps followed in cleaning the data:
+
+> As part of cleaning, we used R script and that helped in cleaning the data with respect to missing values, data anomalies, unstandardized values and entiry matching etc.
+
+1. To get the current working directory:
+**getwd()**
+
+2. To set the working directory to the desired location:
+**setwd("C:/Users/user/Desktop/ISQA8086-2 Adrea Wigins/")**
+
+3. Loading the desired files to the data frame "data":
+**data<-read.csv("500_Cities__Local_Data_for_Better_Health2013_Clean.csv", header = T , na.strings = c("", "NA"))**
+
+4. To view the loaded data drame:
+**view(data)**
+
+5. To removed the unwanted columns from the loaded data frame and making a new data frame:
+**clean_data<-subset(data, select = -c(6,8,11,12,13,18,19,20))**
+
+6. Renaming the column "Data_Value" to Data_Value in %, as the entire column values reflect percentages:
+**colnames(clean_data)[colnames(clean_data)=="Data_Value"]<-"Data_Value(in%)"**
+
+7. Changing the "NA" values in "PopulationCount" Column to "Unknown" :
+**clean_data[["PopulationCount"]][is.na(clean_data[["PopulationCount"]])] <- "Unknown"**
+
+8. To view the top 6 rows of our working dataframe:
+**head(clean_data)**
+
+9. To view the entire dataframe:
+**View(clean_data)**
+
+10. To print the required table with set of arguments listed aboove for clean data:
+**write.csv(clean_data, "500_Cities__Local_Data_for_Better_Health2013_Clean.csv")**
+
+    Note: The initial dataset corresponding to the year 2013 with uncleaned data is available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/500CitiesLocalDataSetForBetterHealth2013.csv)
+    and the Cleaned dataset for the 500 Cities dataset is also available [here](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/RawDataSet/CleanedDataSet500CitiesForBetterHealth2013.csv) for reference.
+    
+### Contributors
+1. Venkata Sravani Kakaraparthi
+2. Venkata Naga Sai Sriram Akella
+3. Yanhe Wu
+4. Narahari Sundaragopalan
+
+### R Plot - Documentation 
+
+
+> This document explains the steps in creating an R Plot for data visualization for the Research Questions raised in the previous assignments for 500 Local Cities Health Dataset
+> The R Plot is created based on the R script generated previously as part of Data Preparation.
+
+
+
+```{r echo=FALSE}
+# Loading the Library
+library(readr)
+library(ggplot2)
+library(reshape2)
+library(stringr)
+
+# Setting the Working Directory for the R Script
+setwd('/Users/naru/ISQA8086/Team_Project/ISQA8086-Team-Project/Deliverables/RScriptDeliverable')
+
+# Read the CSV file into a new data frame
+categoryDistribution <- read.csv('8086rscript.csv')
+
+# Rename Column to a meaningful name
+colnames(categoryDistribution)[8] <- "Data_Value_in_percentage"
+
+# Make the column Numeric to carry out aggregation functions
+categoryDistribution$Data_Value_in_percentage <- as.numeric(categoryDistribution$Data_Value_in_percentage)
+categoryDistribution$PopulationCount <- as.numeric(categoryDistribution$PopulationCount)
+
+# Calculate the Actual Population Count Value from the Data Value Column and Population Column
+categoryDistribution$ActualPopulation <- (categoryDistribution$Data_Value_in_percentage*categoryDistribution$PopulationCount*0.01)
+
+# Insert a new Column named Region and categorize states into different Regions ("New England", "Middle Atlantic", "East North Central", "West North Central", "South Atlantic" "East South Central", "West South Central", "Mountain", "Pacific", "USA")
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Connecticut","Maine",
+                                                                  "Massachusetts", "New
+                                                                  Hampshire", "Rhode
+                                                                  Island", "Vermont")] <-
+  "New England"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("New Jersey", "New York",
+                                                                  "Pennsylvania")] <- "Middle Atlantic"
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Illinois", "Indiana", 
+                                                                  "Michigan", "Ohio", 
+                                                                  "Wisconsin")] <- "East North Central"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Iowa", 
+                                                                  "Kansas", "Minnesota", 
+                                                                  "Missouri", "Nebraska", 
+                                                                  "North Dakota", "South
+                                                                  Dakota")] <- "West North Central"
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Delaware", "Florida", 
+                                                                  "Georgia", "Maryland", 
+                                                                  "North Carolina", "South
+                                                                  Carolina", "Virginia",
+                                                                  "District of Columbia", 
+                                                                  "West Virginia")] <-
+  "South Atlantic"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Alabama", "Kentucky",
+                                                                  "Mississippi",
+                                                                  "Tennessee")] <- "East South Central"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Arkansas", 
+                                                                  "Louisiana", "Oklahoma",
+                                                                  "Texas")] <- "West South Central"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Arizona", "Colorado",
+                                                                  "Idaho", 
+                                                                  "Montana", "Nevada", "New
+                                                                  Mexico", 
+                                                                  "Utah", "Wyoming")] <- "Mountain"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("Alaska", 
+                                                                  "California", "Hawaii",
+                                                                  "Oregon", 
+                                                                  "Washington")] <- "Pacific"
+
+
+categoryDistribution$Region[categoryDistribution$StateDesc %in% c("United States")] <- "USA"
+
+# Replace "NA" values with 0 in ActualPopulation Column
+columnToChange <- categoryDistribution[, c("ActualPopulation")]
+columnToChange[is.na(columnToChange)] <- 0
+categoryDistribution[,c("ActualPopulation")] <- columnToChange
+#View(categoryDistribution)
+
+# Create a subset of the original Data frame for Health Outcomes category
+healthOutcomesCategory <- subset (categoryDistribution, Category == 'Health Outcomes')
+
+# Perform a Sum of Health Outcomes for each Region 
+sumofHealthOutcomesCategory <- aggregate(healthOutcomesCategory$ActualPopulation, 
+                                         by = list(Region = healthOutcomesCategory$Region),
+                                         FUN=sum)
+
+# Create a subset of the original data frame for Prevention category
+preventionCategory <- subset(categoryDistribution, Category == 'Prevention')
+
+
+# Perform a Sum of Prevention Measures for each Region
+sumOfPreventionCategory <- aggregate(preventionCategory$ActualPopulation, 
+                                     by = list(Region = preventionCategory$Region), 
+                                     FUN=sum)
+
+
+# Create a copy of the data frame to split a column and create a correlation
+corelatedCategoryDistribution <- categoryDistribution
+
+# Create a new column "HealthOutcomes" from existing column "Category"
+corelatedCategoryDistribution$HealthOutcomes[corelatedCategoryDistribution$Category 
+                                             %in% c("Health Outcomes", "Prevention")] <- corelatedCategoryDistribution$ActualPopulation
+
+# Replace the count values in "HealthOutcomes" column to 0  where the category type is "Prevention"
+columnToReplace <- corelatedCategoryDistribution[,c("HealthOutcomes")]
+columnToReplace[corelatedCategoryDistribution$Category == "Prevention"] <- 0
+corelatedCategoryDistribution[,c("HealthOutcomes")] <- columnToReplace
+
+
+# Create a new column "Prevention" from existing column "Category"
+corelatedCategoryDistribution$Prevention[corelatedCategoryDistribution$Category 
+                                         %in% c("Health Outcomes", "Prevention")] <- corelatedCategoryDistribution$ActualPopulation
+
+# Replace the count values in "Prevention" column to 0  where the category type is "Health Outcomes"
+columnToReplace <- corelatedCategoryDistribution[, c("Prevention")]
+columnToReplace[corelatedCategoryDistribution$Category == "Health Outcomes"] <- 0
+corelatedCategoryDistribution[,c("Prevention")] <- columnToReplace
+
+# Perform a sum of Prevention measures for each region from the newly created column "Prevention"
+sumOfPreventionByRegion <- aggregate(corelatedCategoryDistribution$Prevention, by = list(Region = corelatedCategoryDistribution$Region), FUN=sum)
+
+# Perform a sum of Health Outcomes measures for each region from the newly create column "HealthOutcomes"
+sumOfHealthOutcomesByRegion <- aggregate(corelatedCategoryDistribution$HealthOutcomes, by = list(Region = corelatedCategoryDistribution$Region), FUN=sum)
+
+# Rename columns to appropriate names in the data frames
+colnames(sumOfPreventionByRegion)[2] <- "Population_Prevention_Category"
+colnames(sumOfHealthOutcomesByRegion)[2] <- "Population_Health_Outcomes"
+
+# Merge the newly created data frames containing sum of population separated by Region
+mergedHealthOutcome_Prevention <- merge(sumOfHealthOutcomesByRegion, sumOfPreventionByRegion)
+```
+
+
+
+
+
+```{r}
+#Removed unwanted state rowname with the value "USA"
+mergedHealthOutcome_Prevention <- mergedHealthOutcome_Prevention[-8,]
+
+#Create 3 temporary data frames for creating an R Plot
+a <- data.frame(mergedHealthOutcome_Prevention$Region)
+b <- data.frame(mergedHealthOutcome_Prevention$Population_Health_Outcomes)
+c <- data.frame(mergedHealthOutcome_Prevention$Population_Prevention_Category)
+
+#Merge all the data frames into one
+df <- data.frame(a,b,c)
+
+#Filter the data frame values based on Region
+df <- melt(df, id.vars = "mergedHealthOutcome_Prevention.Region")
+
+#Create an R plot using ggplot library
+ggplot(df, aes(x=reorder(mergedHealthOutcome_Prevention.Region, value), 
+               y=value/1000000, fill=variable)) + 
+  geom_bar(stat = "identity") + 
+  scale_fill_manual(values = c("#303B41", "#00B2B9"), 
+                    labels= c("Health Outcome", "Prevention Category")) +
+  xlab("Regions") + 
+  ylab("Population Affected (in Millions)") + 
+  ggtitle("Box Plot of Population Affected and Regions in the USA") +
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  scale_x_discrete(labels = function(x) str_wrap(x, width=5)) +
+  labs(fill="Measurement Category")
+
+```
+
+
+
+> The above plot intends to provide a visualization on the different measure of Categories by which the 500 Cities Local Health Dataset is based upon.
+> The categories, Health Outcomes and Preventive Measures, are combined to be depicted on a single bar graph divided based on Regions in the USA
+> The visualization depicts that there has been a linear relation with the number of Preventive Measures with respect to Health outcomes in the 5 Regions in the USA
+
+
+
+```{r}
+#Create a CSV of the cleaned data and R Script created in the previous assignment
+state_and_region <- read.csv("Updated_US_States_Regions_Health.csv")
+
+#Create a new data frame creating a relation between Measures and States
+measureStateRelation <- aggregate(list(state_and_region$ActualPopulation,
+                                       state_and_region$PopulationCount), 
+                                  by=list(Measures = state_and_region$MeasureId, State =
+                                            state_and_region$StateDesc), FUN=sum)
+
+#Rename column name to a meaningful name
+colnames(measureStateRelation)[3] <- "Affected_Population"
+colnames(measureStateRelation)[4] <- "Total_Population"
+
+measureStateRelation$Percent_Affected_Population <-
+  (measureStateRelation$Affected_Population / 
+     measureStateRelation$Total_Population * 100)
+
+#Create a data frame for High BP Health Outcome
+measureBPHigh <- subset(measureStateRelation, Measures == 'BPHIGH')
+
+#Removed unwanted "USA" column
+measureBPHigh <- measureBPHigh[-45,]
+measureBPHigh <- measureBPHigh[,-1]
+
+#Convert column and rownames to lower case for plotting on US Map
+colnames(measureBPHigh)[1] <- "state"
+levels(measureBPHigh$state) <- tolower(levels(measureBPHigh$state))
+
+#Install required libraries
+library(fiftystater)
+library(mapproj)
+data("fifty_states")
+
+#Create a plot to show State wise Distribution of High BP in the USA
+p <- ggplot(measureBPHigh, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + 
+  labs(x="", y="") + 
+  theme(panel.background = element_blank()) 
+
+#Provide a title to the R Plot
+p + scale_fill_gradient(low="#86b2f9", high = "#002266", 
+                        space = "Lab",  
+                        guide = "colourbar") + 
+  ggtitle("State wise Distribution - Affected Population by High BP (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1)) + 
+  labs(fill="Population Percentage (%)")
+
+```
+
+
+
+> The above plot shows a visualization of the High BP measure (Health Outcome) in all the states in the USA. It can be seen that a state like California has population affected by High BP 
+
+
+
+```{r}
+
+#Rename column to meaningful name in the main data frame
+colnames(measureStateRelation)[2] <- "state"
+
+#Create a data frame for BP Prevention Measure
+measureBPMed <- subset(measureStateRelation, Measures == 'BPMED')
+measureBPMed <- measureBPMed[,-1]
+measureBPMed <- measureBPMed[-45,]
+
+#Change the state names to lower case for mapping on US map
+levels(measureBPMed$state) <- tolower(levels(measureBPMed$state))
+
+#Create a R Plot for State Wise Distribution for BP Prevention
+vizMeasureBPMed <- ggplot(measureBPMed, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x="", y="") + 
+  theme(panel.background = element_blank())
+
+#Provide a Title and colour to the R Plot
+vizMeasureBPMed + scale_fill_gradient(low="#9dfbb0", high = "#006622", 
+                                      space = "Lab", 
+                                      guide = "colourbar") + 
+  ggtitle("State wise Distribution - Prevention for High BP (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1)) + 
+  labs(fill="Population Percentage (%)")
+
+```
+
+
+
+> The above plot shows a visualization of a Preventive measure of Medium BP in all the states in the USA. This provides an insight, in comparison with the Health Outcomes of High BP in the previous plot, on how the Preventive measure was carried out
+
+
+
+```{r}
+
+#Create a data frame for High Cholesterol Health Outcome in states of USA
+measureHighCholesterol <- subset(measureStateRelation, Measures == 'HIGHCHOL')
+measureHighCholesterol <- measureHighCholesterol[,-1]
+measureHighCholesterol <- measureHighCholesterol[-45,]
+
+#Change rownames to lower case for proper mapping
+levels(measureHighCholesterol$state) <- tolower(levels(measureHighCholesterol$state))
+
+#Create a R Plot for State wise distribution of High Cholesterol Health Outcome in the USA
+vizMeasureHighCholesterol <- ggplot(measureHighCholesterol, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x="", y="") + 
+  theme(panel.background = element_blank())
+
+#Provide a title and colour to the R Plot
+vizMeasureHighCholesterol +  scale_fill_gradient(low="#f1a7b0", high = "#af0418", 
+                                                 space = "Lab",  
+                                                 guide = "colourbar") + 
+  ggtitle("State wise Distribution - High Cholesterol (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1)) +
+  labs(fill="Population Percentage (%)")
+
+```
+
+
+
+> The above plot shows a visualization of the High Cholesterol measure (Health Outcome) in all the states in the USA. It can be seen that a state like California has population affected by High Cholesterol 
+
+
+
+```{r}
+#Create a data frame for Cholesterol Prevention Measure in USA
+measureCholesterolScreen <- subset(measureStateRelation, Measures == 'CHOLSCREEN')
+measureCholesterolScreen <- measureCholesterolScreen[,-1]
+measureCholesterolScreen <- measureCholesterolScreen[-45,]
+
+#Change rownames to lower case for proper mapping 
+levels(measureCholesterolScreen$state) <- tolower(levels(measureCholesterolScreen$state))
+
+#Create R Plot for State wise distribution of Cholesterol Prevention measure
+vizHighCholesterolPrevention <- ggplot(measureCholesterolScreen, aes(map_id = state)) +
+  geom_map(aes(fill=Percent_Affected_Population), 
+           map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) + 
+  coord_map() + scale_x_continuous(breaks=NULL) + 
+  scale_y_continuous(breaks=NULL) + labs(x="", y="") + 
+  theme(panel.background = element_blank())
+
+#Provide a title and colour to the R Plot
+vizHighCholesterolPrevention + scale_fill_gradient(low="#e6bcf0", high = "#990bbb", 
+                                                   space = "Lab",  
+                                                   guide = "colourbar") + 
+  ggtitle("State wise Distribution - Prevention for Cholesterol (in Percentage)") + 
+  theme(plot.title = element_text(hjust = 0.1)) + 
+  labs(fill="Population Percentage (%)")
+```
+
+
+
+> The above plot shows a visualization of the Cholesterol Screening (Preventive Measure) in all the states in the USA.
+
+
+> The dataset has only one quantitative value by which different states or regions of the USA could be compared. Hence the opportunity to use data and create different kinds of visualization was limited.
+
+
+> However, the current visualization created through R Plots provides an insight on how the Health Outcomes and Preventive Measures are distributed across various Regions in the USA and provides a concentration of each Measure in all the states of USA
+
+
