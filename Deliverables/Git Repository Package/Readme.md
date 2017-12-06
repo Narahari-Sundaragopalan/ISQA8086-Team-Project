@@ -63,7 +63,7 @@ The initial data set of the 500 Cities Project is available [here](https://githu
 ## Git Repository Package contents
 
 * [Readme.md](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/Deliverables/Git%20Repository%20Package/Readme.md) that describes the overview of the contents and the content that represents in the presentation of a dataset and explains the contributorship to the necessary deliverables
-* *Fully commented knitted HTML* document that contains-
+* [Fully commented knitted HTML document](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/tree/master/Deliverables/Git%20Repository%20Package/Knitted%20HTML) that contains-
   1. Data cleaning documentation and/or scripts, including data source location,
   2. Fully commented analysis script and any outputs that it generates, including summary,statistics and plots
 * [Audience Persona](https://github.com/Narahari-Sundaragopalan/ISQA8086-Team-Project/blob/master/Deliverables/Git%20Repository%20Package/Audience_Persona_updated%20.pdf) which represents the target audience who is the end user of the data analysis or the cleaned dataset for better and real-time decision making.
